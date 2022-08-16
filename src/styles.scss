@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./variable.scss";
+
+.navbar-top{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    background-image: linear-gradient(to bottom right,rgb(23, 31, 53) ,rgb(23, 31, 53),rgb(197, 11, 104));
+}  
+
+.navbar{
+    width: 100%;
+    background: $lightBackground;
+}
+
+.dropdown-toggle {
+    color: $light;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.loginBtn{
+    margin-left: 15px;
+    padding: 0.5rem 0.5rem !important;
+    background-color: $background;
+    border-radius: 12px;
+}
+
+.loginBtn .btn{
+    color: $light;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    color: white;
+}    
+
+.carousel {
+  position: relative;
+    margin-top: 5px;
+    // padding: 5px;
+    height: auto;
+}  
+
+.advertise-images {
+    height: 250px;
+}
+
+.carousel-item .img {
+    width: 100%;
+}
