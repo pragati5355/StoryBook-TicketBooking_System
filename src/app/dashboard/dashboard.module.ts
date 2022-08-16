@@ -14,6 +14,9 @@ import { HomePageComponent } from './home-page/home-page.component';
   imports: [
     CommonModule,
     DashboardRoutingModule
+  ],
+  exports : [
+    NavBarComponent
   ]
 })
 export class DashboardModule { }

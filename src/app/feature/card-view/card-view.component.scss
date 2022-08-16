@@ -1,0 +1,34 @@
+@import "../../../variable.scss";
+
+.card{
+    background-color: $lightBackground;
+}
+
+.card-img-top{
+    border-radius: 6px;
+}
+
+.card-title{
+    color: $light;
+    font-size: medium;
+}
+
+.card-subtitle{
+    color: $light;
+    font-size: small;
+}
+
+.card-text{
+    color: $light;
+    font-size: smaller;
+}
+
+.card-IMAX{
+    color: $light;
+    font-size: smaller;
+}
+
+.btn{
+    color: $light;
+    background-color: $background;
+}
