@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CardViewComponent } from './card-view/card-view.component';
+import { MoviesComponent } from './movies/movies.component';
+import { PlaysComponent } from './plays/plays.component';
 
 const routes: Routes = [
 
   {
     path : '',
-    component : CardViewComponent
+    component : MoviesComponent
+  },
+  {
+    path : 'plays',
+    component : PlaysComponent
   }
 ];
 

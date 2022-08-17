@@ -2,20 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FeatureRoutingModule } from './feature-routing.module';
-import { CardViewComponent } from './card-view/card-view.component';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { MoviesComponent } from './movies/movies.component';
+import { PlaysComponent } from './plays/plays.component';
+import { ElementsModule } from '../elements/elements.module';
 
 
 @NgModule({
   declarations: [
-    CardViewComponent,
-    MoviesComponent
+    MoviesComponent,
+    PlaysComponent,
   ],
   imports: [
     CommonModule,
     FeatureRoutingModule,
-    DashboardModule
+    DashboardModule,
+    ElementsModule
   ]
 })
 export class FeatureModule { }
