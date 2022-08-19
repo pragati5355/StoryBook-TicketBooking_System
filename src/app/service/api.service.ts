@@ -15,6 +15,13 @@ export class ApiService {
 
 
   getMovie():Observable<any> {
-    return this.http.get(environment.baseUrl);
+    return this.http.get(`${environment.baseUrl}`);
   }
+
+  getSingleMovie(id:any): Observable<any> {
+    return this.http.get(`${environment.baseUrl + id}`);
+
+  }
+
+
 }

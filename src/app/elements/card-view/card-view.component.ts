@@ -1,4 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-view',
@@ -9,9 +10,14 @@ export class CardViewComponent implements OnInit {
 
   @Input() movieDetail :any;
 
-  constructor() { }
+  constructor(
+    private route : Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  bookTickets() {
+    this.route.navigate(['/ticket/seats/' + this.movieDetail.id]);
+  }
 }

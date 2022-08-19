@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , OnDestroy} from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -6,11 +7,12 @@ import { ApiService } from 'src/app/service/api.service';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit , OnDestroy{
 
   allMovies: any = []; 
   movieData: any = [];
 
+  getSubscription !: Subscription;
 
   constructor(
     private movieApiService : ApiService
@@ -18,7 +20,7 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.movieApiService.getMovie().subscribe(
+    this.getSubscription = this.movieApiService.getMovie().subscribe(
       (res:any) => {
         console.log(res);
         this.allMovies = res;
@@ -28,6 +30,10 @@ export class MoviesComponent implements OnInit {
         console.error(err);
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    this.getSubscription.unsubscribe();
   }
 
   getFilteredData(data:any) {

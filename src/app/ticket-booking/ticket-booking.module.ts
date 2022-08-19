@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { TicketBookingRoutingModule } from './ticket-booking-routing.module';
 import { SelectSeatsComponent } from './select-seats/select-seats.component';
+import { ElementsModule } from '../elements/elements.module';
+import { DashboardModule } from '../dashboard/dashboard.module';
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { SelectSeatsComponent } from './select-seats/select-seats.component';
   ],
   imports: [
     CommonModule,
-    TicketBookingRoutingModule
+    TicketBookingRoutingModule,
+    DashboardModule
   ]
 })
 export class TicketBookingModule { }

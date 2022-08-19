@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SelectSeatsComponent } from './select-seats/select-seats.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path : "seats/:id",
+    component : SelectSeatsComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
