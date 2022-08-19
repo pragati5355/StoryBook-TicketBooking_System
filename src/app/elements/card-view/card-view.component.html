@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="card" style="width: 18rem; border-radius: 10px;">
-        <img [src]="movie.image" class="card-img-top" alt="...">
+    <div class="card hover-shadow shadow-2-strong" style="width: 18rem; border-radius: 10px;">
+        <img [src]="movieDetail.moviePoster" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{movie.title}}</h5>
-          <p class="card-subtitle">{{movie.subtitle}}</p>
-          <p class="card-text">{{movie.text}}</p>
-          <button class="btn" type="button">Book tickets</button>
+          <h5 class="card-title">{{movieDetail.movieTitle}}</h5>
+          <p class="card-subtitle">{{movieDetail.movieSubtitle}}</p>
+          <p class="card-text">{{movieDetail.movieText}}</p>
+          <button class="btn d-grid mx-auto" type="button">Book tickets</button>
         </div>
     </div>
 

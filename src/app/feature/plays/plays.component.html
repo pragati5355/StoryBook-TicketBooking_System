@@ -1,1 +1,18 @@
-<p>plays works!</p>
+<div class="plays">
+    <app-nav-bar></app-nav-bar>
+    <app-card-carousel></app-card-carousel>
+
+    <div class="trending-plays">
+        <h5 class="trending-text">Trending plays</h5>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 p-4" *ngFor="let play of playData" >
+                <app-card-view [movieDetail]="play" ></app-card-view>
+             </div>
+        </div>
+    </div>
+
+
+</div>

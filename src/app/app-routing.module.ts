@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren : () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
-    path : 'movies',
+    path : 'feature',
     loadChildren : () => import('./feature/feature.module').then(m => m.FeatureModule)
   }
 ];
