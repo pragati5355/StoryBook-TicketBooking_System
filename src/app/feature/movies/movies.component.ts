@@ -1,6 +1,6 @@
 import { Component, OnInit , OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ApiService } from 'src/app/service/api.service';
+import { ApiService } from 'src/app/shared/service/api.service';
 
 @Component({
   selector: 'app-movies',

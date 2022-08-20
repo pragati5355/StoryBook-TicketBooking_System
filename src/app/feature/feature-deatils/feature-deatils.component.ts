@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ApiService } from 'src/app/service/api.service';
+import { ApiService } from 'src/app/shared/service/api.service';
 
 @Component({
   selector: 'app-feature-deatils',
