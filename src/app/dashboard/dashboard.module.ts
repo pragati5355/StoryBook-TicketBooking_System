@@ -2,21 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ElementsModule } from '../elements/elements.module';
 
 
 @NgModule({
   declarations: [
-    NavBarComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
-  ],
-  exports : [
-    NavBarComponent
+    DashboardRoutingModule,
+    ElementsModule
   ]
 })
 export class DashboardModule { }

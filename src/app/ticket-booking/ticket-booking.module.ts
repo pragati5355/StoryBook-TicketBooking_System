@@ -14,7 +14,7 @@ import { DashboardModule } from '../dashboard/dashboard.module';
   imports: [
     CommonModule,
     TicketBookingRoutingModule,
-    DashboardModule
+    ElementsModule
   ]
 })
 export class TicketBookingModule { }

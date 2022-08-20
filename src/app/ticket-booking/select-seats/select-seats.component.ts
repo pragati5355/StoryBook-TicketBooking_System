@@ -10,13 +10,10 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class SelectSeatsComponent implements OnInit , OnDestroy{
 
-  id:any;
-  dataMovie:any;
-
   getSubscription !: Subscription;
 
-  rows : number[] = [1,2,3,4,5,6,7];
-  column : string[] = ['A','B','C','D','E','F','G'];
+  rows : number[] = [1,2,3,4,5];
+  column : string[] = ['A','B','C','D','E'];
 
   reserved : string[] = [];
   selected : string[] = [];
@@ -29,16 +26,6 @@ export class SelectSeatsComponent implements OnInit , OnDestroy{
 
   ngOnInit(): void {
 
-    this.id = this.route.snapshot.params['id'];
-    this.getSubscription = this.movieApiService.getSingleMovie(this.id).subscribe(
-      (res:any) => {
-        console.log(res);
-        this.dataMovie = res.data;
-      },
-      (err:any) => {
-        console.error(err);
-      }
-    );
   }
 
   ngOnDestroy(): void {

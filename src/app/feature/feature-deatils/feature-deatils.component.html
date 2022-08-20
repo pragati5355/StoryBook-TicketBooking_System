@@ -1,0 +1,29 @@
+<div class="ticket-seats">
+    <app-nav-bar></app-nav-bar>
+    <div class="container">
+        <div class="movie-content">
+            <div class="row">
+                <div class="col">
+                    <div class="movie-details-container">
+                        <div class="image-container">
+                                <img [src]="dataMovie.moviePoster" alt="Movie Image" class="movie-poster">
+                            </div>
+                        <div class="detail-container">
+                            <h3 class="movie-title">{{ dataMovie.movieTitle}}</h3>
+                            <div class="movie-subtitle">
+                                Frame : {{ dataMovie.movieSubtitle }} <br>
+                                Genres : {{ dataMovie.movieText}} <br>
+                                Test : Test string lorem ipsum
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="select-seat d-grid gap-2 col-6 mx-auto" >
+            <button class="btn" type="button" (click)="selectSeat()">Select seats</button>
+        </div>
+    </div>
+</div>
+

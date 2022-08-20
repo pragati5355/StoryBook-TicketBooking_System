@@ -18,6 +18,6 @@ export class CardViewComponent implements OnInit {
   }
 
   bookTickets() {
-    this.route.navigate(['/ticket/seats/' + this.movieDetail.id]);
+    this.route.navigate(['/feature/details/' + this.movieDetail.id]);
   }
 }

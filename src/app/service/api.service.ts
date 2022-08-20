@@ -8,18 +8,19 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
 
+  private baseUrl = environment.baseUrl;
+
   constructor(
     private http : HttpClient
-    
   ) {}
 
 
   getMovie():Observable<any> {
-    return this.http.get(`${environment.baseUrl}`);
+    return this.http.get(this.baseUrl + '/movies');
   }
 
   getSingleMovie(id:any): Observable<any> {
-    return this.http.get(`${environment.baseUrl + id}`);
+    return this.http.get(this.baseUrl + '/movies/' +id);
 
   }
 

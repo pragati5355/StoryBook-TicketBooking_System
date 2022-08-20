@@ -22,7 +22,6 @@ export class PlaysComponent implements OnInit , OnDestroy{
 
     this.getSubscription = this.movieApiService.getMovie().subscribe(
       (res:any) => {
-        console.log(res);
         this.allPlays = res;
         this.getFilteredData(this.allPlays);
       },

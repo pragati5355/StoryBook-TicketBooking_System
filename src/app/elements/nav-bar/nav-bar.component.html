@@ -1,10 +1,7 @@
-<nav class="navbar-top bg-light">
+<nav class="navbar-top bg-light container-fluid">
     <div class="container">
         <div class="row justify-content-between">
-            <!-- <div class="col-md-2">
-                <img  class="logo" src="../../../assets/_images/ticketlogo.jpg" alt="Logo image">
-            </div> -->
-            <div class="col-md-10">
+            <div class="col-md-1">
                 <div class="logo-name">
                     <span class="navbar-brand h1" style="color: white;"> <span style="color: rgb(168, 45, 70);">C</span>inema</span>
                 </div>  
@@ -12,6 +9,16 @@
                     <span class="navbar-brand h1" style="color: white;"><span style="color:rgb(168, 45, 70);">T</span>ICKET</span>
                 </div>
             </div>
+            <div class="col-md-9">
+                <div class="navbar-nav feature-name">
+                    <div class="d-flex">
+                        <a class="nav-link active" aria-current="page" routerLink="/dashboard">Home</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/feature/movies">Movies</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/feature/plays">Plays</a>
+                     </div>
+                </div>  
+            </div>
+            
             <div class="col-md-2">
                 <div class="d-flex">
                     <div class="dropdown">
@@ -25,14 +32,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</nav>
-<nav class="navbar navbar-expand-md">
-    <div class="container">
-        <div class="navbar-nav feature-name">
-            <a class="nav-link active" aria-current="page" href="#" routerLink="/dashboard">Home</a>
-            <a class="nav-link active" aria-current="page" href="#" routerLink="/feature/movies">Movies</a>
-            <a class="nav-link active" aria-current="page" href="#" routerLink="/feature/plays">Plays</a>
-        </div>   
     </div>
 </nav>

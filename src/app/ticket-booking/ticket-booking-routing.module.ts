@@ -4,7 +4,7 @@ import { SelectSeatsComponent } from './select-seats/select-seats.component';
 
 const routes: Routes = [
   {
-    path : "seats/:id",
+    path : "seats",
     component : SelectSeatsComponent
   }
 ];

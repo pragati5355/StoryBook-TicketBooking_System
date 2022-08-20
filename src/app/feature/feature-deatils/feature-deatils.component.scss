@@ -1,0 +1,51 @@
+@import "../../../variable.scss";
+
+.screen-text{
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: $secondaryColor;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 10px;
+}
+
+.movie-poster{
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.movie-title {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.movie-subtitle {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.image-container {
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+
+.detail-container {
+    position: absolute;
+    top: 328px;
+    background: rgba(221, 103, 162, 0.77);
+    width: 40%;
+    height: 150px;
+    padding: 25px;
+    color: white;
+}
+
+.btn{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    color: $light;
+    background-color: $background;
+}
