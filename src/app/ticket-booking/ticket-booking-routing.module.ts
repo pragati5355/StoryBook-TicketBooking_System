@@ -8,11 +8,11 @@ const routes: Routes = [
   {
     path : "seats/:id",
     component : SelectSeatsComponent,
-    // canActivate : [AuthGuard]
   },
   {
     path: "confirm/:id",
-    component : ConfirmBookingComponent
+    component : ConfirmBookingComponent,
+    canActivate : [AuthGuard]
   }
 ];
 
