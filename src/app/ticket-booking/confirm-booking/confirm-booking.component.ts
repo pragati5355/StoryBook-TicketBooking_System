@@ -114,6 +114,7 @@ export class ConfirmBookingComponent implements OnInit , OnDestroy{
     this.data.userEmail = formData.email,
     this.data.userMobileno = formData.mobileNo,
     this.apiService.postBookTicket(this.data).subscribe();
+    this.ngOnInit();
 
     this.router.navigate(["/dashboard"]);
     
