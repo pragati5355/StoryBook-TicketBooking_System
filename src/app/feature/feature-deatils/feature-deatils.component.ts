@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/shared/service/api.service';
+import { DataService } from 'src/app/shared/service/data.service';
 
 @Component({
   selector: 'app-feature-deatils',
@@ -17,6 +18,7 @@ export class FeatureDeatilsComponent implements OnInit, OnDestroy {
 
   constructor(
     private apiService : ApiService,
+    private dataService : DataService,
     private route : ActivatedRoute,
     private router : Router
   ) { }
@@ -26,7 +28,6 @@ export class FeatureDeatilsComponent implements OnInit, OnDestroy {
     this.id = this.route.snapshot.params['id'];
     this.getSubscription = this.apiService.getSingleMovie(this.id).subscribe(
       (res:any) => {
-        console.log(res);
         this.dataMovie = res.data;
       },
       (err:any) => {
@@ -34,6 +35,7 @@ export class FeatureDeatilsComponent implements OnInit, OnDestroy {
       }
     );
 
+   
   }
 
   ngOnDestroy(): void {
@@ -41,6 +43,8 @@ export class FeatureDeatilsComponent implements OnInit, OnDestroy {
   }
 
   selectSeat() {
-    this.router.navigate(["/ticket/seats"]);
+    this.dataService.movieTitle.next(this.dataMovie.movieTitle);
+    this.dataService.movieSubtitle.next(this.dataMovie.movieText);
+    this.router.navigate(["/ticket/seats/"+ this.id]);
   }
 }

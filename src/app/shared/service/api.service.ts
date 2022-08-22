@@ -22,4 +22,16 @@ export class ApiService {
 
   }
 
+  getSeats(id:any): Observable<any> {
+    return this.http.get(this.baseUrl +'/seats/' +id);
+  }
+
+  postBookTicket(data:any) : Observable<any> {
+    return this.http.post(this.baseUrl + '/bookings/' , data);
+  }
+
+  getBookTicket() : Observable<any> {
+    return this.http.get(this.baseUrl + '/bookings');
+  }
+
 }

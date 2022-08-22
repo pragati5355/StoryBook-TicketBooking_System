@@ -8,7 +8,7 @@
     background-image: linear-gradient(to bottom right,rgb(23, 31, 53) ,rgb(23, 31, 53),rgb(197, 11, 104));
 } 
 
-.btn .dropdown-toggle {
+.dropdown-toggle {
     color: $light;
     padding: 10px;
 }    
@@ -17,6 +17,7 @@
     padding: 0.5rem 0.5rem !important;
     background-color: $background;
     border-radius: 12px;
+    margin-left: 3%;
 }
 
 .loginBtn .btn{

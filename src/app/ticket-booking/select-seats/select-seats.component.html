@@ -1,86 +1,64 @@
 <div class="ticket-seats">
     <app-nav-bar></app-nav-bar>
     <div class="seat-container">
-            <div class="screen"></div>
-            <div class="row">
-                <div class="seat occupied"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat occupied"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-            </div>
-            <div class="row">
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat"></div>
-                <div class="seat occupied"></div>
-                <div class="seat occupied"></div>
-                <div class="seat occupied"></div>
-                <div class="seat"></div>
-            </div>
+        <div class="screen">All eyes this way please!</div>
+
+        <!-- <div *ngFor="let row of rows">
+            <span
+                *ngFor="let col of columns"
+                (click)="selectSeat(row + col)"
+                [ngSwitch]="getSeatStatus(row + col)"
+            >
+            <span
+                *ngSwitchCase="'selected'"
+                class="seat selected"
+            ></span>
+            <span
+                *ngSwitchCase="'sold'"
+                class="seat occuiped"
+            ></span>
+            <span *ngSwitchDefault class="seat"></span>
+            </span>
+        </div>     -->
+
+        <div *ngFor="let row of rows">
+            <span
+              *ngFor="let col of columns"
+              (click)="selectSeat(row + col)"
+              [ngSwitch]="getSeatStatus(row + col)"
+            >
+              <span
+                class="fa-solid fa-square  selected m-2"
+                *ngSwitchCase="'selected'"
+              ></span>
+              <span
+                class="fa-solid fa-square  occupied m-2"
+                *ngSwitchCase="'sold'"
+              ></span>
+              <span 
+                class="fa-solid fa-square  m-2"
+                *ngSwitchDefault>
+              </span>
+            </span>
+        </div>
 
         <ul class="showcase">
             <li>
-              <div class="seat"></div>
+              <div  class="fa-solid fa-square m-2"></div>
               <small>Available</small>
             </li>
             <li>
-              <div class="seat selected"></div>
+              <div class="fa-solid fa-square selected"></div>
               <small>Selected</small>
             </li>
             <li>
-              <div class="seat occupied"></div>
+              <div class="fa-solid fa-square occupied"></div>
               <small>Sold</small>
             </li>    
         </ul>
 
-        <p class="text">
-            You have selected <span id="count">0</span> seats for the total price of Rs. <span id="total">0</span>
-        </p>
+        <div class="buy-ticket d-grid gap-2 col-3 mx-auto">
+            <button class="btn" type="button" (click)="buyTickets()">Buy tickets</button>
+        </div>
     </div>
 </div>

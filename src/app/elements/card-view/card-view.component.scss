@@ -12,12 +12,11 @@
 
 .card{
     border-radius: 4px;
-
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
 .card:hover{
-    box-shadow: 3px 3px 3px 3spx $black;
+    box-shadow: 3px 3px 3px 3px $black;
     transform: scale(1.1);
 }

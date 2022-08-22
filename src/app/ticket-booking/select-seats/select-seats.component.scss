@@ -1,7 +1,4 @@
 @import "../../../variable.scss";
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
-
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
 
 .seat-container {
     font-family: "Montserrat", sans-serif;
@@ -10,7 +7,7 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-    background-color: #242333;
+    background-color: $bodyColor;
     color: $light;
 }    
 
@@ -25,32 +22,26 @@
     border-radius: 5px;
 }
 
-.seat {
-    background-color: #444451;
-    height: 12px;
-    width: 15px;
-    margin: 3px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.select span {
+    width: 20px;
+    height: 20px;
 }
 
 .selected {
-    background-color: #0081cb;
+    color: #0081cb;
 }
   
 .occupied {
-    background-color: #fff;
+    color: $background;
+}
+
+.fa-solid:hover{
+    cursor: pointer;
+    transform: scale(1);
+
 }
   
-.seat:nth-of-type(2) {
-    margin-right: 18px;
-}
-  
-.seat:nth-last-of-type(2) {
-    margin-left: 18px;
-}
-  
-.seat:not(.occupied):hover {
+.showcase:not(.occupied):hover {
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -67,7 +58,7 @@
     background: rgba(0,0,0,0.1);
     padding: 5px 10px;
     border-radius: 5px;
-    color: #777;
+    color: $light;
     margin-top: 60px;
 }
   
@@ -89,25 +80,36 @@
 }
   
 .screen {
+    position: relative;
     background: #fff;
-    height: 70px;
+    height: 30px;
+    text-align: center;
+    padding: 45px;
+    color: $black;
     width: 25%;
-    margin: 15px 0;
+    margin: 40px 0;
     transform: rotateX(-45deg);
     box-shadow: 0 3px 10px rgba(255,255,255,0.7);
 }
   
-  p.text {
+p.text {
     margin: 40px 0;
-  }
+}
   
-  p.text span {
+p.text span {
     color: #0081cb;
     font-weight: 600;
     box-sizing: content-box;
-  }
+}
   
-  .credits a {
+.credits a {
     color: #fff;
-  }
-  
+}
+
+.btn {
+    color: $light;
+    background-color: $background;
+    margin-bottom: 122px;
+    margin-top: 20px;
+    padding: 5px;
+}

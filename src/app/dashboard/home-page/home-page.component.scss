@@ -1,0 +1,15 @@
+@import "../../../variable.scss";
+
+.card{
+    margin-top: 20px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background-color: $bodyColor;
+    color: $light;
+}
+
+.card:hover{
+    box-shadow: 3px 3px 3px 3px $black;
+    transform: scale(1.1);
+}

@@ -1,0 +1,79 @@
+<div class="confirm-booking">
+    <app-nav-bar></app-nav-bar>
+
+    <div class="booking-container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text font-weight-bold">
+                    <p style="font-weight:bold;">Book Your</p>
+                </div>
+                <div class="movie-text font-weight-bold">
+                    <p style="font-weight:bold;">Movie</p>
+                </div>
+                <div class="movie-desc">
+                    <p>A movie or play is a type of visual art that uses images and sounds to
+                        tell stories <br> or teach people something. Most people watch movies to entertain <br> themselves or to have fun. </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="confirm-form">
+                    <form [formGroup]="confirmTicketForm">
+                        <label for="name" class="form-label">
+                            Name:
+                            <input id="Name" class="form-control" type="text" formControlName="name" placeholder="Enter your name">
+                        </label>
+                        <div  *ngIf="name && name.invalid && name.touched">
+                            <span *ngIf="form.name.errors?.['required']" class="text-danger">
+                                Name is required.
+                            </span>
+                            <span *ngIf="form.name.errors?.['pattern']" class="text-danger">
+                                This Field is Required Only Alphabets.
+                            </span>
+                            <span *ngIf="form.name.errors?.['noSpaceAllowed']" class="text-danger">
+                                Name should not contain space.
+                            </span>
+                        </div>
+                        <br>
+            
+                        <label for="email" class="form-label">
+                            Email:
+                            <input id="Email" class="form-control" type="text" formControlName="email" placeholder="Enter your email address">
+                        </label>
+                        <div  *ngIf="email && email.invalid && email.touched">
+                            <span *ngIf="form.email.errors?.['required']" class="text-danger">
+                                Email Address is required.
+                            </span>
+                            <span *ngIf="form.email.errors?.['pattern']" class="text-danger">
+                                Please provide a valid email address.
+                            </span>
+                        </div>
+                        <br>
+            
+                        <label for="mobileNo" class="form-label">
+                            Mobile No:
+                            <input id="MobileNo" class="form-control" type="text" formControlName="mobileNo" placeholder="Enter your Mobile No">
+                        </label>
+                        <div  *ngIf="mobileNo && mobileNo.invalid && mobileNo.touched">
+                            <span *ngIf="form.mobileNo.errors?.['required']" class="text-danger">
+                                Mobile No is required.
+                            </span>
+                            <span *ngIf="form.mobileNo.errors?.['pattern']" class="text-danger">
+                                Please, Enter 10 digits Mobile Number.
+                            </span>
+                        </div>
+                        <br>
+                        <div class="card shadow-2-strong justify-content-between" style="width: 18rem; border-radius: 10px;">
+                            <div class="card-body">
+                                <h5 class="card-title text-start">Movie name : {{movie.movieTitle}} </h5>
+                                <p class="card-subtitle text-start">Movie genres : {{movie.movieText}}</p>
+                                <p class="card-text text-start">Seats : {{movieSeats}}</p>
+                            </div>
+                        </div>
+
+                        <button class="btn gap-2 col-3 mx-auto mt-3" type="submit" [disabled]="confirmTicketForm.invalid" (click)="bookATicket(confirmTicketForm.value)">Book ticket</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
