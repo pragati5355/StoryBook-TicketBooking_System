@@ -19,7 +19,6 @@ export class HomePageComponent implements OnInit ,OnDestroy{
   ngOnInit(): void {
     this.getSubscription = this.apiService.getBookTicket().subscribe(
       (res:any) => {
-        console.log(res);
         this.bookedDetails = res;
       }
     )

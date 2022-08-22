@@ -6,15 +6,16 @@
 
 .text {
     margin-left: 16%;
-    font-size: 30px;
-    line-height: 34px;
+    font-size: 40px;
+    line-height: 44px;
     margin-top: 150px;
 }
 
 .movie-text{
     margin-left: 16%;
-    font-size: 25px;
-    line-height: 28px;
+    font-size: 30px;
+    line-height: 34px;
+    color: $black;
 }
 
 .movie-desc{
@@ -33,10 +34,6 @@
 .card:hover{
     box-shadow: 3px 3px 3px 3spx $black;
     transform: scale(1);
-}
-
-.movie-text{
-    color: $black;
 }
 
 .btn {

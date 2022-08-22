@@ -3,24 +3,6 @@
     <div class="seat-container">
         <div class="screen">All eyes this way please!</div>
 
-        <!-- <div *ngFor="let row of rows">
-            <span
-                *ngFor="let col of columns"
-                (click)="selectSeat(row + col)"
-                [ngSwitch]="getSeatStatus(row + col)"
-            >
-            <span
-                *ngSwitchCase="'selected'"
-                class="seat selected"
-            ></span>
-            <span
-                *ngSwitchCase="'sold'"
-                class="seat occuiped"
-            ></span>
-            <span *ngSwitchDefault class="seat"></span>
-            </span>
-        </div>     -->
-
         <div *ngFor="let row of rows">
             <span
               *ngFor="let col of columns"
