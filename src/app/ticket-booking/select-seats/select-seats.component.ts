@@ -16,7 +16,7 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
   id: any;
   movieId: any;
   getSubscription !: Subscription;
-  getSubSeat !: Subscription;
+  getSubscriptionSeat !: Subscription;
 
   rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
   columns: number[] = [1, 2, 3, 4, 5, 6];
@@ -43,7 +43,7 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
       }
     );
 
-    this.getSubSeat = this.apiService.getSeats(this.movieId).subscribe(
+    this.getSubscriptionSeat = this.apiService.getSeats(this.movieId).subscribe(
       (res:any) => {
         this.getMergedArray(res.data);
       },  
@@ -56,7 +56,7 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.getSubscription.unsubscribe();
-    this.getSubSeat.unsubscribe();
+    this.getSubscriptionSeat.unsubscribe();
   }
 
   getMergedArray(data: any[]) {
