@@ -13,13 +13,12 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
 
   movieData: any;
   movie: any;
-  id: any;
   movieId: any;
   getSubscription !: Subscription;
   getSubscriptionSeat !: Subscription;
 
-  rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-  columns: number[] = [1, 2, 3, 4, 5, 6];
+  rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F'];
+  columns: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
   sold: string[] = ['E3','E2','C5','C6'];
   selected: string[] = [];
@@ -44,8 +43,9 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
     );
 
     this.getSubscriptionSeat = this.apiService.getSeats(this.movieId).subscribe(
-      (res:any) => {
-        this.getMergedArray(res.data);
+      (res) => {
+        console.log(res);
+        this.getMergedArray(res);
       },  
       (err:any) => {
         console.error(err);
@@ -61,7 +61,7 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
 
   getMergedArray(data: any[]) {
     data.forEach(element => {
-      this.sold = this.sold.concat(element.seats)
+      this.sold = this.sold.concat(element.seat)
      });
   }
 
