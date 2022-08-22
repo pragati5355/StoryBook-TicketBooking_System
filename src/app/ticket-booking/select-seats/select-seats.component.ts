@@ -18,10 +18,10 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
   getSubscription !: Subscription;
   getSubSeat !: Subscription;
 
-  columns: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
-  rows: number[] = [1, 2, 3, 4, 5, 6];
+  rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+  columns: number[] = [1, 2, 3, 4, 5, 6];
 
-  sold: string[] = ['3E','3F','6C','6D'];
+  sold: string[] = ['E3','E2','C5','C6'];
   selected: string[] = [];
 
   constructor(
@@ -43,10 +43,10 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
       }
     );
 
-    this.getSubSeat = this.apiService.getSeats(this.id).subscribe(
+    this.getSubSeat = this.apiService.getSeats(this.movieId).subscribe(
       (res:any) => {
         this.getMergedArray(res.data);
-      },
+      },  
       (err:any) => {
         console.error(err);
       }
