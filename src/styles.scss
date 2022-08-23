@@ -44,3 +44,31 @@
 .carousel-item .img {
     width: 100%;
 }
+
+
+.text-overflow{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.card:hover{
+    box-shadow: 2px 2px 2px 2px $black;
+    transform: scale(1.05);
+}
+
+.card{
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.trending-text{
+    font-size: 16px;
+    line-height: 20px;
+    color: $primaryColor;
+    border-bottom: 2px solid $black;
+    padding: 13px;
+    margin-left: 25px;
+}

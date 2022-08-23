@@ -24,18 +24,6 @@
     line-height: 18px;
 }
 
-.card{
-    border-radius: 4px;
-    text-align: center;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.card:hover{
-    box-shadow: 3px 3px 3px 3spx $black;
-    transform: scale(1);
-}
-
 .btn {
     color: $light;
     background-color: $background;
