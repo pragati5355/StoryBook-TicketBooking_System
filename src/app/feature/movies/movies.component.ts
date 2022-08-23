@@ -22,7 +22,7 @@ export class MoviesComponent implements OnInit , OnDestroy{
 
     this.getSubscription = this.movieApiService.getMovie().subscribe(
       (res:any) => {
-        this.allMovies = res;
+        this.allMovies = res.data;
         this.getFilteredData(this.allMovies);
       },
       (err:any) => {

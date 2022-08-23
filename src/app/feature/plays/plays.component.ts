@@ -22,7 +22,7 @@ export class PlaysComponent implements OnInit , OnDestroy{
 
     this.getSubscription = this.movieApiService.getMovie().subscribe(
       (res:any) => {
-        this.allPlays = res;
+        this.allPlays = res.data;
         this.getFilteredData(this.allPlays);
       },
       (err:any) => {

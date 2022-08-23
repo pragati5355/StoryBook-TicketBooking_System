@@ -44,8 +44,7 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
 
     this.getSubscriptionSeat = this.apiService.getSeats(this.movieId).subscribe(
       (res) => {
-        console.log(res);
-        this.getMergedArray(res);
+        this.getMergedArray(res.data);
       },  
       (err:any) => {
         console.error(err);
