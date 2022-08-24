@@ -11,7 +11,9 @@ describe('CardCarouselComponent', () => {
       declarations: [ CardCarouselComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(CardCarouselComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
