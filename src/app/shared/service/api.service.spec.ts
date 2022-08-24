@@ -18,4 +18,29 @@ describe('ApiService', () => {
     expect(service).toBeTruthy();
   });
 
+  it('should have getMovie method', () => {
+    const service: ApiService = TestBed.get(ApiService);
+    expect(service.getMovie).toBeTruthy();
+  });
+
+  it('should have getSingleMovie method', () => {
+    const service: ApiService = TestBed.get(ApiService);
+    expect(service.getSingleMovie).toBeTruthy();
+  });
+
+  it('should have getSeats method', () => {
+    const service: ApiService = TestBed.get(ApiService);
+    expect(service.getSeats).toBeTruthy();
+  });
+
+  it('should have postBookTicket method', () => {
+    const service: ApiService = TestBed.get(ApiService);
+    expect(service.postBookTicket).toBeTruthy();
+  });
+
+  it('should have getBookTicket method', () => {
+    const service: ApiService = TestBed.get(ApiService);
+    expect(service.getBookTicket).toBeTruthy();
+  })
+
 });

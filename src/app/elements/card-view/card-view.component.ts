@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CardViewComponent implements OnInit {
 
-  @Input() movieDetail :any;
+  @Input() movieDetail :string | any = '';
 
   constructor(
     private route : Router

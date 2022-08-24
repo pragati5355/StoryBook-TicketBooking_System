@@ -12,7 +12,7 @@ import { DataService } from 'src/app/shared/service/data.service';
 export class FeatureDeatilsComponent implements OnInit, OnDestroy {
 
   id:any;
-  dataMovie:any;
+  dataMovie:string | any = '';
 
   getSubscription !: Subscription;
 
@@ -21,7 +21,8 @@ export class FeatureDeatilsComponent implements OnInit, OnDestroy {
     private dataService : DataService,
     private route : ActivatedRoute,
     private router : Router
-  ) { }
+  ) { 
+  }
 
   ngOnInit(): void {
 

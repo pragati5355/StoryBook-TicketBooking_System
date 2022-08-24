@@ -16,7 +16,7 @@ export class ConfirmBookingComponent implements OnInit , OnDestroy{
   alphaPattern = "[a-zA-Z][a-zA-Z ]+";
   mobilePattern = "^((\\+91-?)|0)?[0-9]{10}$";
 
-  movie: any;
+  movie: string | any = '';
   movieName :any;
   movieSeats :any;
   movieSubtitle :any;
