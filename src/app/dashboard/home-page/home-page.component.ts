@@ -20,7 +20,6 @@ export class HomePageComponent implements OnInit ,OnDestroy{
     this.getSubscription = this.apiService.getBookTicket().subscribe(
       (res:any) => {
         this.bookedDetails = res.data;
-        // this.ngOnInit();
       }
     )
   }
