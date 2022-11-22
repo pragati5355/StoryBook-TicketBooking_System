@@ -1,0 +1,3393 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "User",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "file": "src/stories/User.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "ApiService",
+            "id": "injectable-ApiService-fb9b31261eeee42dd6b81fcb2cf294452086bb842735b19e10f0731c568f34d99dc0cb300ed30b6a66de33cec6e24d326dd1bdb63a18bbc7638cff260d5b9287",
+            "file": "src/app/shared/service/api.service.ts",
+            "properties": [
+                {
+                    "name": "baseUrl",
+                    "defaultValue": "environment.baseUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getBookTicket",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getMovie",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getSeats",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getSingleMovie",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "postBookTicket",
+                    "args": [
+                        {
+                            "name": "data",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<any>",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "data",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { environment } from 'src/environments/environment';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ApiService {\n  private baseUrl = environment.baseUrl;\n\n  constructor(\n    private http : HttpClient\n  ) { }\n\n  getMovie():Observable<any> {\n    return this.http.get(this.baseUrl + '/movies');\n  }\n\n  getSingleMovie(id:any): Observable<any> {\n    return this.http.get(this.baseUrl + '/movies/' +id);\n\n  }\n\n  getSeats(id:any): Observable<any> {\n    return this.http.get(this.baseUrl +'/seats/' +id);\n  }\n\n  postBookTicket(data:any) : Observable<any> {\n    return this.http.post(this.baseUrl + '/bookings/' , data);\n  }\n\n  getBookTicket() : Observable<any> {\n    return this.http.get(this.baseUrl + '/bookings');\n  }\n\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        },
+        {
+            "name": "DataService",
+            "id": "injectable-DataService-b6b1353fb62d157d30d62bf8b8a4792fad94328d8d70fc4cbd698d6acc4825afc925dfe86adff49165eb7f62daa03026b972ee20732d79432158929550eba2fb",
+            "file": "src/app/shared/service/data.service.ts",
+            "properties": [
+                {
+                    "name": "auth",
+                    "defaultValue": "new BehaviorSubject<boolean>(false)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "movieSubtitle",
+                    "defaultValue": "new Subject()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "movieTitle",
+                    "defaultValue": "new Subject()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "seats",
+                    "defaultValue": "new BehaviorSubject([\"\"])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methods": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { BehaviorSubject, Subject } from 'rxjs';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class DataService {\n  \n  movieTitle = new Subject();\n  movieSubtitle = new Subject();\n  seats = new BehaviorSubject([\"\"]);\n  auth = new BehaviorSubject<boolean>(false);\n\n  constructor() { }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 12
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [
+        {
+            "name": "AuthGuard",
+            "id": "injectable-AuthGuard-d309d0355a09bbd32834fe77e657bcb936c5ad8b09669b70c7191eb3f498823d1fccf04695502f3a07ca59ba92d1b8d8e903cc731501d56ad733aa3174b7c161",
+            "file": "src/app/shared/auth-guard/auth.guard.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "canActivate",
+                    "args": [
+                        {
+                            "name": "route",
+                            "type": "ActivatedRouteSnapshot",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "state",
+                            "type": "RouterStateSnapshot",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable | Promise | boolean | UrlTree",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "route",
+                            "type": "ActivatedRouteSnapshot",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "state",
+                            "type": "RouterStateSnapshot",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { DataService } from '../service/data.service';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AuthGuard implements CanActivate {\n\n  constructor(\n    private route : Router,\n    private dataService : DataService\n  ) {\n\n  }\n  canActivate(\n    route: ActivatedRouteSnapshot,\n    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {\n    \n      if(this.dataService.auth.getValue()) {\n        return true;\n      }\n      else {\n        this.route.navigate([\"/feature/movies\"]);\n        return false;\n      }\n  }\n  \n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "route",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "dataService",
+                        "type": "DataService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 9,
+                "jsdoctags": [
+                    {
+                        "name": "route",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "dataService",
+                        "type": "DataService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "guard"
+        }
+    ],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-1e95beb6b2c1cbf7e12bb2e45f0d794b2c193eeeb4373b802435c2b746d57bfe8a45ffd8d24f3f4436e34716f00bc6e2fe38c21f8f433d5a14169d0b1aa0ec3d",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'TicketBooking-System-App'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'TicketBooking-System-App';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"main\">\n    <router-outlet></router-outlet>\n</div>\n\n\n\n\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-14b666b67482b2d0c0d0ffaa5c070c893de144bf1bc88da0a79059430c7465349f37a3345ee88d4c4641a47c64f273a8c63e48afc9f09924e93a90f790cd97bd",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nWhat background color to use\n",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 28,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 776,
+                            "end": 789,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 777,
+                                "end": 785,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 42,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHow large should the button be?\n",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 34,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 48,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "<p>Is this the principal call to action on the page?</p>\n",
+            "rawdescription": "\n\nIs this the principal call to action on the page?\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n /**\n   * Is this the principal call to action on the page?\n   */\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 50
+                    }
+                }
+            }
+        },
+        {
+            "name": "CardCarouselComponent",
+            "id": "component-CardCarouselComponent-0b80eb97445d2db59d1c4254a526026a2c9055d9bd7543d7f70191783c389c3e0a7a2855d41d03fab9fbf24523a3b417b1da4d18e522c9f243583a515e58b079",
+            "file": "src/app/elements/card-carousel/card-carousel.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card-carousel",
+            "styleUrls": [
+                "./card-carousel.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card-carousel.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-card-carousel',\n  templateUrl: './card-carousel.component.html',\n  styleUrls: ['./card-carousel.component.scss']\n})\nexport class CardCarouselComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../variable.scss\";\n\n\n.movie-card{\n    background-color: $light;\n}    \n\n.cards-carousel{\n    transition: all 0.2s ease;\n    cursor: pointer;\n}\n\n.cards-carousel:hover{\n    box-shadow: 3px 3px 3px 3spx;\n    transform: scale(1.1);\n}\n\n.poster-image{\n    width: 300px;\n    height: 100px;\n    // width: 100%;\n    // height: 100%;\n}\n\n.card-body .title{\n    font-size: 15px; \n    color: $black;\n    margin-top: 2px;\n}\n\n.card-body .subtitle{\n    font-size: 12px;\n    color: $black;\n}\n",
+                    "styleUrl": "./card-carousel.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"card-carousel\">\n    <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-bs-ride=\"true\">\n        <div class=\"carousel-indicators\">\n          <button type=\"button\" data-bs-target=\"#carouselExampleIndicators\" data-bs-slide-to=\"0\" class=\"active\" aria-current=\"true\" aria-label=\"Slide 1\"></button>\n          <button type=\"button\" data-bs-target=\"#carouselExampleIndicators\" data-bs-slide-to=\"1\" aria-label=\"Slide 2\"></button>\n          \n        </div>\n        <div class=\"carousel-inner\">\n          <div class=\"carousel-item active\">\n            <div class=\"container-fluid d-flex justify-content-center\">\n                <div class=\"row movie-card\">\n                    <div class=\"col-md-3\">\n                        <div class=\"cards-carousel\">\n                            <div class=\"first p-2 text-center\">\n                                <img src=\"../../../assets/_images/poster.jpg\" class=\"poster-image\"/>\n                                <div class=\"card-body\">\n                                    <h5 class=\"title\">Vikrant Rona</h5>\n                                    <p class=\"subtitle\">Adventure | Mystery | Thriller</p>\n                                </div>\n                                \n                            </div>\n            \n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"cards-carousel\">\n                       <div class=\" second  p-2 text-center\">\n                                <img src=\"../../../assets/_images/poster4.jpg\" class=\"poster-image\"/>\n                                <div class=\"card-body\">\n                                    <h5 class=\"title\">SuperPets</h5>\n                                    <p class=\"subtitle\">Adventure | Action | Animation</p>\n                                </div>\n                            </div>\n                        </div>\n            \n                    </div>\n                    <div class=\"col-md-3\">\n                         <div class=\"cards-carousel\">\n                            <div class=\" third p-2 text-center\">\n                                 <img src=\"../../../assets/_images/poster2.jpg\" class=\"poster-image\"/>\n                                 <div class=\"card-body\">\n                                    <h5 class=\"title\">Brahmāstra: Part One-Shiva</h5>\n                                    <p class=\"subtitle\">Adventure | Action</p>\n                                </div>\n                            </div>\n                            </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"cards-carousel\">\n                            <div class=\"fourth p-2 text-center\">\n                                <img src=\"../../../assets/_images/poster3.jpg\" class=\"poster-image\"/>\n                                <div class=\"card-body\">\n                                    <h5 class=\"title\">Takatak 2</h5>\n                                    <p class=\"subtitle\">Comedy | Romantic</p>\n                                </div>\n                                \n                            </div>\n            \n                        </div>\n                    </div>\n            \n                </div>\n        \n            </div>\n           \n          </div>\n          <div class=\"carousel-item\">\n            <div class=\"container-fluid d-flex justify-content-center\">\n                <div class=\"row movie-card\">\n                    <div class=\"col-md-3\">\n                        <div class=\"cards-carousel\">\n                            <div class=\"first p-2 text-center\">\n                                <img src=\"../../../assets/_images/poster5.jpg\" class=\"poster-image\"/>\n                                <div class=\"card-body\">\n                                    <h5 class=\"title\">Bullet Train</h5>\n                                    <p class=\"subtitle\">Action | Thriller</p>\n                                </div>\n                                \n                            </div>\n            \n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"cards-carousel\">\n                       <div class=\" second  p-2 text-center\">\n                                <img src=\"../../../assets/_images/poster6.jpg\" class=\"poster-image\"/>\n                                <div class=\"card-body\">\n                                    <h5 class=\"title\">Timepass 3</h5>\n                                    <p class=\"subtitle\">Drama | Romantic</p>\n                                </div>\n                            </div>\n                        </div>\n            \n                    </div>\n                    <div class=\"col-md-3\">\n                         <div class=\"cards-carousel\">\n                            <div class=\" third p-2 text-center\">\n                                 <img src=\"../../../assets/_images/poster7.jpg\" class=\"poster-image\"/>\n                                 <div class=\"card-body\">\n                                    <h5 class=\"title\">Ekda Kaay Zala</h5>\n                                    <p class=\"subtitle\">Drama | Family</p>\n                                </div>\n                            </div>\n                            </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"cards-carousel\">\n                            <div class=\"fourth p-2 text-center\">\n                                <img src=\"../../../assets/_images/poster8.jpg\" class=\"poster-image\"/>\n                                <div class=\"card-body\">\n                                    <h5 class=\"title\">Karthikeya 2</h5>\n                                    <p class=\"subtitle\">Fantasy | Mystery | Thriller</p>\n                                </div>\n                                \n                            </div>\n            \n                        </div>\n                    </div>\n            \n                </div>\n        \n            </div>\n          </div>\n        </div>\n        <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleIndicators\" data-bs-slide=\"prev\">\n          <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n          <span class=\"visually-hidden\">Previous</span>\n        </button>\n        <button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleIndicators\" data-bs-slide=\"next\">\n          <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n          <span class=\"visually-hidden\">Next</span>\n        </button>\n      </div>\n</div>\n"
+        },
+        {
+            "name": "CardViewComponent",
+            "id": "component-CardViewComponent-9bab1d9b4ef1d480d461a455eed8ab69ce8e180869b2d889b0b0b8a5df3f6d0c131723c9cd87a03741a0ddc7a47ea9a2e1211bce3d5c57f98d7f3e9c92410ee0",
+            "file": "src/app/elements/card-view/card-view.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card-view",
+            "styleUrls": [
+                "./card-view.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card-view.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "movieDetail",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string | any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "bookTickets",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, Input} from '@angular/core';\nimport { Router } from '@angular/router';\n\n@Component({\n  selector: 'app-card-view',\n  templateUrl: './card-view.component.html',\n  styleUrls: ['./card-view.component.scss']\n})\nexport class CardViewComponent implements OnInit {\n\n  @Input() movieDetail :string | any = '';\n\n  constructor(\n    private route : Router\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n  bookTickets() {\n    this.route.navigate(['/feature/details/' + this.movieDetail.id]);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../variable.scss\";\n\n.btn {\n    background-color: $background;\n    color: $light;\n    padding: 5px 15%;\n    transition: all 0.2s ease;\n    cursor: pointer;    \n    box-shadow: 3px 3px 3px 3spx $black;\n    transform: scale(1.1);\n}",
+                    "styleUrl": "./card-view.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "route",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "route",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"card hover-shadow shadow-2-strong\" style=\"width: 100%; border-radius: 10px;\">\n    <img [src]=\"movieDetail.moviePoster\" class=\"card-img-top\" alt=\"...\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title text-overflow\">{{movieDetail.movieTitle}}</h5>\n        <p class=\"card-subtitle\">{{movieDetail.movieSubtitle}}</p>\n        <p class=\"card-text\">{{movieDetail.movieText}}</p>\n        <button class=\"btn d-grid mx-auto\" type=\"button\" (click)=\"bookTickets()\">Book tickets</button>\n    </div>\n</div>\n\n\n"
+        },
+        {
+            "name": "ConfirmBookingComponent",
+            "id": "component-ConfirmBookingComponent-be420da8be9bc362c0c92a9d1736966e7c189fc3affcbf6f08904be7294e5c3e4189d007daf4b63d75adc065d2ae3c5972fe2934f2c218fcfc019b64f6c42e12",
+            "file": "src/app/ticket-booking/confirm-booking/confirm-booking.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-confirm-booking",
+            "styleUrls": [
+                "./confirm-booking.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./confirm-booking.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "alphaPattern",
+                    "defaultValue": "\"[a-zA-Z][a-zA-Z ]+\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "confirmTicketForm",
+                    "defaultValue": "new FormGroup({\n    name : new FormControl('',[Validators.required,Validators.maxLength(10), this.noSpaceAllowed, Validators.pattern(this.alphaPattern)]),\n    email : new FormControl('',[Validators.required,Validators.pattern(this.emailpattern)]),\n    mobileNo : new FormControl('',[Validators.required,Validators.pattern(this.mobilePattern)])\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "data",
+                    "defaultValue": "{\n    userName : \"\",\n    userEmail : \"\",\n    userMobileno : \"\",\n    movieId : \"\",\n    seats : [\"\"]\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "emailpattern",
+                    "defaultValue": "\"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "getSubscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "mobilePattern",
+                    "defaultValue": "\"^((\\\\+91-?)|0)?[0-9]{10}$\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "movie",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | any",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "movieName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "movieSeats",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "movieSubtitle",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "bookATicket",
+                    "args": [
+                        {
+                            "name": "formData",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 112,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "formData",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 81,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "noSpaceAllowed",
+                    "args": [
+                        {
+                            "name": "control",
+                            "type": "FormControl",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "{ noSpaceAllowed: boolean; }",
+                    "typeParameters": [],
+                    "line": 103,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "control",
+                            "type": "FormControl",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { FormControl, FormGroup, Validators } from '@angular/forms';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Subscription } from 'rxjs';\nimport { ApiService } from 'src/app/shared/service/api.service';\nimport { DataService } from 'src/app/shared/service/data.service';\n\n@Component({\n  selector: 'app-confirm-booking',\n  templateUrl: './confirm-booking.component.html',\n  styleUrls: ['./confirm-booking.component.scss']\n})\nexport class ConfirmBookingComponent implements OnInit , OnDestroy{\n\n  emailpattern = \"[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$\";\n  alphaPattern = \"[a-zA-Z][a-zA-Z ]+\";\n  mobilePattern = \"^((\\\\+91-?)|0)?[0-9]{10}$\";\n\n  movie: string | any = '';\n  movieName :any;\n  movieSeats :any;\n  movieSubtitle :any;\n  id :any;\n  getSubscription !: Subscription;\n\n  data = {\n    userName : \"\",\n    userEmail : \"\",\n    userMobileno : \"\",\n    movieId : \"\",\n    seats : [\"\"]\n  }\n\n  confirmTicketForm = new FormGroup({\n    name : new FormControl('',[Validators.required,Validators.maxLength(10), this.noSpaceAllowed, Validators.pattern(this.alphaPattern)]),\n    email : new FormControl('',[Validators.required,Validators.pattern(this.emailpattern)]),\n    mobileNo : new FormControl('',[Validators.required,Validators.pattern(this.mobilePattern)])\n  });\n\n\n  constructor(\n    private dataService : DataService,\n    private router : Router,\n    private apiService : ApiService,\n    private route : ActivatedRoute\n  ) { }\n\n  ngOnInit(): void {\n    \n    this.id = this.route.snapshot.params['id'];\n    this.data.movieId = this.id;\n    this.getSubscription = this.apiService.getSingleMovie(this.id).subscribe(\n      (res:any) => {\n        this.movie = res.data;\n      },\n      (err:any) => {\n        console.error(err);\n      }\n    );\n\n    this.dataService.movieTitle.subscribe(\n      (res) => {\n        this.movieName = res;\n      }\n    );\n\n    this.dataService.movieSubtitle.subscribe(\n      (res) => {\n        this.movieSubtitle = res;\n      }\n    )\n\n    this.dataService.seats.subscribe(\n      (res) => {\n        this.movieSeats = res;\n        this.data.seats = this.movieSeats;\n      }\n    )\n  }\n\n  ngOnDestroy(): void {\n    this.getSubscription.unsubscribe();\n  }\n\n  get form()\n  {\n    return this.confirmTicketForm.controls;\n  }\n\n  get name() {\n    return this.confirmTicketForm.get('name');\n  }\n\n  get email() {\n    return this.confirmTicketForm.get('email');\n  }\n\n  get mobileNo() {\n    return this.confirmTicketForm.get('mobileNo');\n  }\n\n\n  noSpaceAllowed(control : FormControl){\n\n    if(control.value != null && control.value.indexOf(' ') != -1){\n      return {noSpaceAllowed : true}\n    }\n\n    return null;\n  }\n\n  bookATicket(formData:any) {\n    this.data.userName = formData.name,\n    this.data.userEmail = formData.email,\n    this.data.userMobileno = formData.mobileNo,\n    this.apiService.postBookTicket(this.data).subscribe();\n    this.router.navigate([\"/dashboard\"]);\n    \n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../variable.scss\";\n\n.confirm-form{\n    margin-top: 90px;\n}\n\n.text {\n    margin-left: 16%;\n    font-size: 40px;\n    line-height: 44px;\n    margin-top: 150px;\n}\n\n.movie-text{\n    margin-left: 16%;\n    font-size: 30px;\n    line-height: 34px;\n    color: $black;\n}\n\n.movie-desc{\n    margin-left: 16%;\n    font-size: 13px;\n    line-height: 18px;\n}\n\n.btn {\n    color: $light;\n    background-color: $background;\n}",
+                    "styleUrl": "./confirm-booking.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dataService",
+                        "type": "DataService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 38,
+                "jsdoctags": [
+                    {
+                        "name": "dataService",
+                        "type": "DataService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "accessors": {
+                "form": {
+                    "name": "form",
+                    "getSignature": {
+                        "name": "form",
+                        "type": "",
+                        "returnType": "",
+                        "line": 85
+                    }
+                },
+                "name": {
+                    "name": "name",
+                    "getSignature": {
+                        "name": "name",
+                        "type": "",
+                        "returnType": "",
+                        "line": 90
+                    }
+                },
+                "email": {
+                    "name": "email",
+                    "getSignature": {
+                        "name": "email",
+                        "type": "",
+                        "returnType": "",
+                        "line": 94
+                    }
+                },
+                "mobileNo": {
+                    "name": "mobileNo",
+                    "getSignature": {
+                        "name": "mobileNo",
+                        "type": "",
+                        "returnType": "",
+                        "line": 98
+                    }
+                }
+            },
+            "templateData": "<div class=\"confirm-booking\">\n    <app-nav-bar></app-nav-bar>\n\n    <div class=\"booking-container-fluid\">\n        <div class=\"row\">\n            <div class=\"col-md-6\">\n                <div class=\"text font-weight-bold\">\n                    <p style=\"font-weight:bold;\">Book Your</p>\n                </div>\n                <div class=\"movie-text font-weight-bold\">\n                    <p style=\"font-weight:bold;\">Movie</p>\n                </div>\n                <div class=\"movie-desc\">\n                    <p>A movie or play is a type of visual art that uses images and sounds to\n                        tell stories <br> or teach people something. Most people watch movies to entertain <br> themselves or to have fun. </p>\n                </div>\n            </div>\n            <div class=\"col-md-6\">\n                <div class=\"confirm-form\">\n                    <form [formGroup]=\"confirmTicketForm\">\n                        <label for=\"name\" class=\"form-label\">\n                            Name:\n                            <input id=\"Name\" class=\"form-control\" type=\"text\" formControlName=\"name\" placeholder=\"Enter your name\">\n                        </label>\n                        <div  *ngIf=\"name && name.invalid && name.touched\">\n                            <span *ngIf=\"form.name.errors?.['required']\" class=\"text-danger\">\n                                Name is required.\n                            </span>\n                            <span *ngIf=\"form.name.errors?.['pattern']\" class=\"text-danger\">\n                                This Field is Required Only Alphabets.\n                            </span>\n                            <span *ngIf=\"form.name.errors?.['noSpaceAllowed']\" class=\"text-danger\">\n                                Name should not contain space.\n                            </span>\n                        </div>\n                        <br>\n            \n                        <label for=\"email\" class=\"form-label\">\n                            Email:\n                            <input id=\"Email\" class=\"form-control\" type=\"text\" formControlName=\"email\" placeholder=\"Enter your email address\">\n                        </label>\n                        <div  *ngIf=\"email && email.invalid && email.touched\">\n                            <span *ngIf=\"form.email.errors?.['required']\" class=\"text-danger\">\n                                Email Address is required.\n                            </span>\n                            <span *ngIf=\"form.email.errors?.['pattern']\" class=\"text-danger\">\n                                Please provide a valid email address.\n                            </span>\n                        </div>\n                        <br>\n            \n                        <label for=\"mobileNo\" class=\"form-label\">\n                            Mobile No:\n                            <input id=\"MobileNo\" class=\"form-control\" type=\"text\" formControlName=\"mobileNo\" placeholder=\"Enter your Mobile No\">\n                        </label>\n                        <div  *ngIf=\"mobileNo && mobileNo.invalid && mobileNo.touched\">\n                            <span *ngIf=\"form.mobileNo.errors?.['required']\" class=\"text-danger\">\n                                Mobile No is required.\n                            </span>\n                            <span *ngIf=\"form.mobileNo.errors?.['pattern']\" class=\"text-danger\">\n                                Please, Enter 10 digits Mobile Number.\n                            </span>\n                        </div>\n                        <br>\n                        <div class=\"card shadow-2-strong justify-content-between\" style=\"width: 18rem; border-radius: 10px;\">\n                            <div class=\"card-body\">\n                                <h5 class=\"card-title text-start\">Movie name : {{movie.movieTitle}} </h5>\n                                <p class=\"card-subtitle text-start\">Movie genres : {{movie.movieText}}</p>\n                                <p class=\"card-text text-start\">Seats : {{movieSeats}}</p>\n                            </div>\n                        </div>\n\n                        <button class=\"btn gap-2 col-3 mx-auto mt-3\" type=\"submit\" [disabled]=\"confirmTicketForm.invalid\" (click)=\"bookATicket(confirmTicketForm.value)\">Book ticket</button>\n                    </form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+        },
+        {
+            "name": "FeatureDeatilsComponent",
+            "id": "component-FeatureDeatilsComponent-7bf54897a0c19bc7eff8c66691be6a5a0a4d18698dd40cb3dd8246180aed2d5bb95f93f8129a9aa133ebfcd286583da626c2c0572e57b7a9b2bc4f50971da322",
+            "file": "src/app/feature/feature-deatils/feature-deatils.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-feature-deatils",
+            "styleUrls": [
+                "./feature-deatils.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./feature-deatils.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dataMovie",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "getSubscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "selectSeat",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Subscription } from 'rxjs';\nimport { ApiService } from 'src/app/shared/service/api.service';\nimport { DataService } from 'src/app/shared/service/data.service';\n\n@Component({\n  selector: 'app-feature-deatils',\n  templateUrl: './feature-deatils.component.html',\n  styleUrls: ['./feature-deatils.component.scss']\n})\nexport class FeatureDeatilsComponent implements OnInit, OnDestroy {\n\n  id:any;\n  dataMovie:string | any = '';\n\n  getSubscription !: Subscription;\n\n  constructor(\n    private apiService : ApiService,\n    private dataService : DataService,\n    private route : ActivatedRoute,\n    private router : Router\n  ) { \n  }\n\n  ngOnInit(): void {\n\n    this.id = this.route.snapshot.params['id'];\n    this.getSubscription = this.apiService.getSingleMovie(this.id).subscribe(\n      (res:any) => {\n        this.dataMovie = res.data;\n      },\n      (err:any) => {\n        console.error(err);\n      }\n    );\n\n   \n  }\n\n  ngOnDestroy(): void {\n    this.getSubscription.unsubscribe();\n  }\n\n  selectSeat() {\n    this.dataService.movieTitle.next(this.dataMovie.movieTitle);\n    this.dataService.movieSubtitle.next(this.dataMovie.movieText);\n    this.router.navigate([\"/ticket/seats/\"+ this.id]);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../variable.scss\";\n\n.screen-text{\n    text-align: center;\n    padding: 5px;\n    margin-top: 20px;\n    background-color: $secondaryColor;\n    margin-left: 100px;\n    margin-right: 100px;\n    border-radius: 10px;\n}\n\n.movie-poster{\n    height: 100%;\n    width: 100%;\n    margin-top: 10px;\n}\n\n.movie-title {\n    font-size: 28px;\n    line-height: 36px;\n}\n\n.movie-subtitle {\n    font-size: 14px;\n    line-height: 20px;\n}\n\n.image-container {\n    height: 400px;\n    width: 100%;\n    position: relative;\n}\n\n.detail-container {\n    position: absolute;\n    top: 328px;\n    background: rgba(221, 103, 162, 0.77);\n    width: 40%;\n    height: 150px;\n    padding: 25px;\n    color: $light;\n}\n\n.btn{\n    width: 100%;\n    margin-top: 20px;\n    padding: 10px;\n    color: $light;\n    background-color: $background;\n}",
+                    "styleUrl": "./feature-deatils.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "dataService",
+                        "type": "DataService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 17,
+                "jsdoctags": [
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "dataService",
+                        "type": "DataService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<div class=\"ticket-seats\">\n    <app-nav-bar></app-nav-bar>\n    <div class=\"container\">\n        <div class=\"movie-content\">\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div class=\"movie-details-container\">\n                        <div class=\"image-container\">\n                                <img [src]=\"dataMovie.moviePoster\" alt=\"Movie Image\" class=\"movie-poster\">\n                            </div>\n                        <div class=\"detail-container\">\n                            <h3 class=\"movie-title\">{{ dataMovie.movieTitle}}</h3>\n                            <div class=\"movie-subtitle\">\n                                Frame : {{ dataMovie.movieSubtitle }} <br>\n                                Genres : {{ dataMovie.movieText}} <br>\n                                Time : 2h 11min , 22 Aug 2022\n                            </div>\n                        </div>\n                    </div>\n                    \n                </div>\n            </div>\n        </div>\n        <div class=\"select-seat d-grid gap-2 col-6 mx-auto\" >\n            <button class=\"btn\" type=\"button\" (click)=\"selectSeat()\">Select seats</button>\n        </div>\n    </div>\n</div>\n\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 65,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 74,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 68,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 71,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "HomePageComponent",
+            "id": "component-HomePageComponent-238aa0ae5df763323e426e1e329d87bf15279d0826c3401319181321844232c16424913fcee84431341c85e2d5c6be75829cef30869282c19fde9a5a92cf60b2",
+            "file": "src/app/dashboard/home-page/home-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home-page",
+            "styleUrls": [
+                "./home-page.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home-page.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "bookedDetails",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "getSubscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { Subscription } from 'rxjs';\nimport { ApiService } from 'src/app/shared/service/api.service';\n\n@Component({\n  selector: 'app-home-page',\n  templateUrl: './home-page.component.html',\n  styleUrls: ['./home-page.component.scss']\n})\nexport class HomePageComponent implements OnInit ,OnDestroy{\n\n  bookedDetails:any;\n  getSubscription !: Subscription;\n\n  constructor(\n    private apiService : ApiService\n  ) { }\n\n  ngOnInit(): void {\n    this.getSubscription = this.apiService.getBookTicket().subscribe(\n      (res:any) => {\n        this.bookedDetails = res.data;\n      }\n    )\n  }\n\n  ngOnDestroy(): void {\n    this.getSubscription.unsubscribe();\n  }\n\n\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../variable.scss\";\n\n.card{\n    margin-top: 20px;\n    border-radius: 4px;\n    transition: all 0.2s ease;\n    cursor: pointer;\n    background-color: $bodyColor;\n    color: $light;\n}\n",
+                    "styleUrl": "./home-page.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<div class=\"home-page\">\n    <app-nav-bar></app-nav-bar>\n    <section>\n        <div class=\"container-fluid\">\n            <div id=\"carouselExampleInterval\" class=\"carousel slide\" data-bs-ride=\"carousel\">\n                <div class=\"carousel-indicators\">\n                    <button type=\"button\" data-bs-target=\"#carouselExampleDark\" data-bs-slide-to=\"0\" class=\"active\" aria-current=\"true\" aria-label=\"Slide 1\"></button>\n                    <button type=\"button\" data-bs-target=\"#carouselExampleDark\" data-bs-slide-to=\"1\" aria-label=\"Slide 2\"></button>\n                    <button type=\"button\" data-bs-target=\"#carouselExampleDark\" data-bs-slide-to=\"2\" aria-label=\"Slide 3\"></button>\n                \n                </div>\n                <div class=\"carousel-inner advertise-images\">\n                  <div class=\"carousel-item active\" data-bs-interval=\"10000\">\n                    <img src=\"../../../assets/_images/minions-poster1.jpg\" class=\"d-block w-100 img\" alt=\"...\">\n                  </div>\n                  <div class=\"carousel-item\" data-bs-interval=\"2000\">\n                    <img src=\"../../../assets/_images/advertiseimg1.png\" class=\"d-block w-100 img\" alt=\"...\">\n                  </div>\n                  <div class=\"carousel-item\">\n                    <img src=\"../../../assets/_images/advertiseimg2.png\" class=\"d-block w-100 img\" alt=\"...\">\n                  </div>\n                </div>\n                <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#carouselExampleInterval\" data-bs-slide=\"prev\">\n                  <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n                  <span class=\"visually-hidden\">Previous</span>\n                </button>\n                <button class=\"carousel-control-next\" type=\"button\" data-bs-target=\"#carouselExampleInterval\" data-bs-slide=\"next\">\n                  <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n                  <span class=\"visually-hidden\">Next</span>\n                </button>\n              </div>\n    \n        </div>\n    </section>\n\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-4 col-sm-4\" *ngFor=\"let data of bookedDetails\">\n          <div class=\"card shadow-2-strong\" style=\"border-radius: 10px;\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\" style=\"text-shadow: 3px 3px #c50b77;\">Id : {{data.id}}</h5>\n                <h5 class=\"card-text text-start  text-overflow\">Name : {{data.movie.movieTitle}}</h5>\n                <p class=\"card-text text-start text-overflow\">Genres : {{data.movie.movieText}}</p>\n                <p class=\"card-text text-start\">Seats : {{data.seat}}</p>\n                <p class=\"card-text text-start\">Name : {{data.userName}}</p>\n                <p class=\"card-text text-start text-overflow\">Email : {{data.userEmail}}</p>\n                <p class=\"card-text text-start\">Mobile No : {{data.userMobileno}}</p>\n            </div>\n          </div>\n\n        </div>\n\n      </div>\n\n    </div>\n\n   \n    \n</div>\n"
+        },
+        {
+            "name": "MoviesComponent",
+            "id": "component-MoviesComponent-7a82b73df1c6a09d28ac032657bc51d546436808d572f98d77e0075821e78821c711cb1e0ff8a799e04387662f1a761b91388b7afd2c726ec145aec3bf352160",
+            "file": "src/app/feature/movies/movies.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-movies",
+            "styleUrls": [
+                "./movies.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./movies.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "allMovies",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "getSubscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "movieData",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getFilteredData",
+                    "args": [
+                        {
+                            "name": "data",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "data",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit , OnDestroy} from '@angular/core';\nimport { Subscription } from 'rxjs';\nimport { ApiService } from 'src/app/shared/service/api.service';\n\n@Component({\n  selector: 'app-movies',\n  templateUrl: './movies.component.html',\n  styleUrls: ['./movies.component.scss']\n})\nexport class MoviesComponent implements OnInit , OnDestroy{\n\n  allMovies: any = []; \n  movieData: any = [];\n\n  getSubscription !: Subscription;\n\n  constructor(\n    private movieApiService : ApiService\n  ) { }\n\n  ngOnInit(): void {\n\n    this.getSubscription = this.movieApiService.getMovie().subscribe(\n      (res:any) => {\n        this.allMovies = res.data;\n        this.getFilteredData(this.allMovies);\n      },\n      (err:any) => {\n        console.error(err);\n      }\n    );\n  }\n\n  ngOnDestroy(): void {\n    this.getSubscription.unsubscribe();\n  }\n\n  getFilteredData(data:any) {\n    data.filter((datamovie: any)=>{\n      if(datamovie.type === 'movie'){\n        this.movieData.push(datamovie);\n      }\n    })\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\n\n",
+                    "styleUrl": "./movies.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "movieApiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "movieApiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<div class=\"movies\">\n    <app-nav-bar></app-nav-bar>\n\n    <div class=\"trending-movies\">\n        <h5 class=\"trending-text \">Upcoming movies & plays</h5>\n    </div>\n\n    <app-card-carousel></app-card-carousel>\n\n    <div class=\"trending-movies\">\n        <h5 class=\"trending-text \">Trending movies</h5>\n    </div>\n\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col col-md-4  col-sm-4 p-4\" *ngFor=\"let movie of movieData\" >\n                <app-card-view [movieDetail]=\"movie\" ></app-card-view>\n               \n            </div>\n\n        </div>\n\n    </div>\n</div>\n"
+        },
+        {
+            "name": "NavBarComponent",
+            "id": "component-NavBarComponent-a0ba68fe9080316cbc79d1525bc4bb89557f05b6adedcd500602ef1fc278f45d42275d5cb22cafc76579d4be8ad4db327cb7e42ad642cf42ca65e76ff3446c54",
+            "file": "src/app/elements/nav-bar/nav-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-nav-bar",
+            "styleUrls": [
+                "./nav-bar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./nav-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-nav-bar',\n  templateUrl: './nav-bar.component.html',\n  styleUrls: ['./nav-bar.component.scss']\n})\nexport class NavBarComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./nav-bar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<nav class=\"navbar-top bg-light container-fluid\">\n    <div class=\"container\">\n        <div class=\"row-navbar justify-content-between d-flex\">\n            <div class=\"col-md-1\">\n                <div class=\"logo-name\">\n                    <span class=\"navbar-brand h1\" style=\"color: white;\"> <span style=\"color: rgb(168, 45, 70);\">C</span>inema</span>\n                </div>  \n                <div class=\"logo-name\">\n                    <span class=\"navbar-brand h1\" style=\"color: white;\"><span style=\"color:rgb(168, 45, 70);\">T</span>ICKET</span>\n                </div>\n            </div>\n            <div class=\"col-md-9\">\n                <div class=\"navbar-nav feature-name\">\n                    <div class=\"d-flex\" style=\"text-shadow: 1px 1px #c50b77;\">\n                        <a class=\"nav-link active\" aria-current=\"page\" routerLink=\"/dashboard\">Home</a>\n                        <a class=\"nav-link active\" aria-current=\"page\" routerLink=\"/feature/movies\">Movies</a>\n                        <a class=\"nav-link active\" aria-current=\"page\" routerLink=\"/feature/plays\">Plays</a>\n                     </div>\n                </div>  \n            </div>\n            \n            <div class=\"col-md-2\">\n                <div class=\"d-flex\">\n                    <div class=\"dropdown\">\n                        <button class=\"btn dropdown-toggle\" type=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\n                          Pune\n                        </button>\n                    </div> \n                    <div class=\"loginBtn\">\n                        <button class=\"btn btn-sm\" type=\"button\">Login</button>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</nav>\n"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 64
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 66,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "PlaysComponent",
+            "id": "component-PlaysComponent-6eba481354f21dde26475137a4a44baaee93f6b738d74034133ca6feb948dda693a5109427799424f78a5184cf87139c6377a28ab716a9e41478a7a331935a66",
+            "file": "src/app/feature/plays/plays.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-plays",
+            "styleUrls": [
+                "./plays.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./plays.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "allPlays",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "getSubscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "playData",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getFilteredData",
+                    "args": [
+                        {
+                            "name": "data",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "data",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit, OnDestroy} from '@angular/core';\nimport { Subscription } from 'rxjs';\nimport { ApiService } from 'src/app/shared/service/api.service';\n\n@Component({\n  selector: 'app-plays',\n  templateUrl: './plays.component.html',\n  styleUrls: ['./plays.component.scss']\n})\nexport class PlaysComponent implements OnInit , OnDestroy{\n\n  allPlays : any = [];\n  playData : any = [];\n\n  getSubscription !: Subscription;\n\n  constructor(\n    private movieApiService : ApiService\n  ) { }\n\n  ngOnInit(): void {\n\n    this.getSubscription = this.movieApiService.getMovie().subscribe(\n      (res:any) => {\n        this.allPlays = res.data;\n        this.getFilteredData(this.allPlays);\n      },\n      (err:any) => {\n        console.error(err);\n      }\n    );\n  }\n\n  ngOnDestroy(): void {\n    this.getSubscription.unsubscribe();\n  }\n\n  getFilteredData(data:any) {\n    data.filter((dataplay: any)=>{\n      if(dataplay.type === 'play'){\n        this.playData.push(dataplay);\n      }\n    })\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\n\n",
+                    "styleUrl": "./plays.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "movieApiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "movieApiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<div class=\"plays\">\n    <app-nav-bar></app-nav-bar>\n    <div class=\"trending-movies\">\n        <h5 class=\"trending-text \">Upcoming movies & plays</h5>\n    </div>\n    <app-card-carousel></app-card-carousel>\n\n    <div class=\"trending-plays\">\n        <h5 class=\"trending-text\">Trending plays</h5>\n    </div>\n\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"col-md-4 p-4\" *ngFor=\"let play of playData\" >\n                <app-card-view [movieDetail]=\"play\" ></app-card-view>\n             </div>\n        </div>\n    </div>\n\n\n</div>\n"
+        },
+        {
+            "name": "SelectSeatsComponent",
+            "id": "component-SelectSeatsComponent-5681c7bd0e45a165a9c5054f410a5fc70e374401c4faf3b3b74787e98f2df83263790a17c357bca059c44c6dc74ae9322ec29cfbab3f5bf8f34c4b71dafe7339",
+            "file": "src/app/ticket-booking/select-seats/select-seats.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-select-seats",
+            "styleUrls": [
+                "./select-seats.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./select-seats.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "columns",
+                    "defaultValue": "[1, 2, 3, 4, 5, 6, 7, 8]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "getSubscription",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "getSubscriptionSeat",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "movie",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "movieData",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "movieId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "rows",
+                    "defaultValue": "['A', 'B', 'C', 'D', 'E', 'F']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "selected",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "sold",
+                    "defaultValue": "['E3','E2','C5','C6']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "buyTickets",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 91,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getMergedArray",
+                    "args": [
+                        {
+                            "name": "data",
+                            "type": "any[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 61,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "data",
+                            "type": "any[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getSeatStatus",
+                    "args": [
+                        {
+                            "name": "positionOfSeat",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "\"sold\" | \"selected\" | 0",
+                    "typeParameters": [],
+                    "line": 67,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "positionOfSeat",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 33,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "selectSeat",
+                    "args": [
+                        {
+                            "name": "positionOfSeat",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 78,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "positionOfSeat",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { Subscription } from 'rxjs';\nimport { ApiService } from 'src/app/shared/service/api.service';\nimport { DataService } from 'src/app/shared/service/data.service';\n\n@Component({\n  selector: 'app-select-seats',\n  templateUrl: './select-seats.component.html',\n  styleUrls: ['./select-seats.component.scss']\n})\nexport class SelectSeatsComponent implements OnInit, OnDestroy{\n\n  movieData: any;\n  movie: any;\n  movieId: any;\n  getSubscription !: Subscription;\n  getSubscriptionSeat !: Subscription;\n\n  rows: string[] = ['A', 'B', 'C', 'D', 'E', 'F'];\n  columns: number[] = [1, 2, 3, 4, 5, 6, 7, 8];\n\n  sold: string[] = ['E3','E2','C5','C6'];\n  selected: string[] = [];\n\n  constructor(\n    private dataService : DataService,\n    private router : Router,\n    private apiService : ApiService,\n    private route : ActivatedRoute\n  ) { }\n\n  ngOnInit(): void {\n\n    this.movieId = this.route.snapshot.params['id'];\n    this.getSubscription = this.apiService.getSingleMovie(this.movieId).subscribe(\n      (res:any) => {\n        this.movie = res.data;\n      },\n      (err:any) => {\n        console.error(err);\n      }\n    );\n\n    this.getSubscriptionSeat = this.apiService.getSeats(this.movieId).subscribe(\n      (res) => {\n        this.getMergedArray(res.data);\n      },  \n      (err:any) => {\n        console.error(err);\n      }\n    );\n    \n  }\n\n  ngOnDestroy(): void {\n    this.getSubscription.unsubscribe();\n    this.getSubscriptionSeat.unsubscribe();\n  }\n\n  getMergedArray(data: any[]) {\n    data.forEach(element => {\n      this.sold = this.sold.concat(element.seat)\n     });\n  }\n\n  getSeatStatus(positionOfSeat: string) {\n    if (this.sold.indexOf(positionOfSeat) !== -1) {\n      return 'sold';\n    } else if (this.selected.indexOf(positionOfSeat) !== -1) {\n      return 'selected';\n    } else {\n      return 0;\n    }\n\n  }\n\n  selectSeat(positionOfSeat: string) {\n    let index = this.selected.indexOf(positionOfSeat);\n\n    if (index !== -1) {\n      this.selected.splice(index, 1)\n    } else {\n      if (this.sold.indexOf(positionOfSeat) === -1) {\n        this.selected.push(positionOfSeat);\n      }\n        \n    }\n  }\n\n  buyTickets(){\n    if (this.selected.length > 0) {\n      this.dataService.auth.next(true);\n      this.dataService.seats.next(this.selected);\n      this.router.navigate([\"/ticket/confirm/\" + this.movieId]);\n    } else {\n      this.router.navigate(['/feature/movies']);\n    }\n    \n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../variable.scss\";\n\n.seat-container {\n    font-family: \"Montserrat\", sans-serif;\n\theight: 100%;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tflex-direction: column;\n    background-color: $bodyColor;\n    color: $light;\n}    \n\n.seat-container select {\n    appearance: none;\n    -moz-appearance: none;\n    -webkit-appearance: none;\n    border: 0;\n    padding: 5px 15px;\n    margin-bottom: 40px;\n    font-size: 14px;\n    border-radius: 5px;\n}\n\n.selected {\n    color: #0081cb;\n}\n  \n.occupied {\n    color: $background;\n}\n\n.fa-solid:hover{\n    cursor: pointer;\n    transform: scale(1);\n\n}\n  \n.showcase:not(.occupied):hover {\n    cursor: pointer;\n    transform: scale(1.2);\n}\n  \n.showcase .seat:not(.occupied):hover {\n    cursor: default;\n    transform: scale(1);\n}\n  \n.showcase {\n    display: flex;\n    justify-content: space-between;\n    list-style-type: none;\n    background: rgba(0,0,0,0.1);\n    padding: 5px 10px;\n    border-radius: 5px;\n    color: $light;\n    margin-top: 35px;\n}\n  \n.showcase li {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin: 0 10px;\n}\n  \n.showcase li small {\n    margin-left: 2px;\n}\n  \n.row {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n  \n.screen {\n    position: relative;\n    background: #fff;\n    height: 30px;\n    text-align: center;\n    line-height: 20px;\n    font-size: 15px;\n    padding: 45px;\n    color: $black;\n    width: 25%;\n    margin: 30px 0;\n    transform: rotateX(-45deg);\n    box-shadow: 0 3px 10px rgba(255,255,255,0.7);\n}\n\n.btn {\n    color: $light;\n    background-color: $background;\n    margin-bottom: 110px;\n    margin-top: 13px;\n    padding: 5px;\n}\n",
+                    "styleUrl": "./select-seats.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dataService",
+                        "type": "DataService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 24,
+                "jsdoctags": [
+                    {
+                        "name": "dataService",
+                        "type": "DataService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "templateData": "<div class=\"ticket-seats\">\n    <app-nav-bar></app-nav-bar>\n    <div class=\"seat-container\">\n        <div class=\"screen\">All eyes this way please!</div>\n\n        <div *ngFor=\"let row of rows\">\n            <span\n              *ngFor=\"let col of columns\"\n              (click)=\"selectSeat(row + col)\"\n              [ngSwitch]=\"getSeatStatus(row + col)\"\n            >\n              <span\n                class=\"fa-solid fa-square  selected m-2\"\n                *ngSwitchCase=\"'selected'\"\n              ></span>\n              <span\n                class=\"fa-solid fa-square  occupied m-2\"\n                *ngSwitchCase=\"'sold'\"\n              ></span>\n              <span \n                class=\"fa-solid fa-square  m-2\"\n                *ngSwitchDefault>\n              </span>\n            </span>\n        </div>\n\n        <ul class=\"showcase\">\n            <li>\n              <div  class=\"fa-solid fa-square m-2\"></div>\n              <small>Available</small>\n            </li>\n            <li>\n              <div class=\"fa-solid fa-square selected\"></div>\n              <small>Selected</small>\n            </li>\n            <li>\n              <div class=\"fa-solid fa-square occupied\"></div>\n              <small>Sold</small>\n            </li>    \n        </ul>\n\n        <div class=\"buy-ticket d-grid gap-2 col-3 mx-auto\">\n            <button class=\"btn\" type=\"button\" (click)=\"buyTickets()\">Buy tickets</button>\n        </div>\n    </div>\n</div>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-16cefcfb9251a22810e91da72840a73054bd423a616205606d0954222bbdb54444acfad8efdc6326a8b7a68ec58428b10bfeeae4e33b8e9641f7b253374563b5",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { HttpClientModule } from '@angular/common/http';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule\n  \n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-64ab91ede9f74f49835d583ccb4b7826ad21d457aeba9dc178937a2fbef3f5a54c062c6242d5d2a784189c9db5033f39bfeaab86b1ae2ae3b02db319f8578354",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n  {\n    path : 'dashboard',\n    loadChildren : () => \"import('./dashboard/dashboard.module').then(m => m.DashboardModule)\"\n  },\n  {\n    path : 'feature',\n    loadChildren : () => \"import('./feature/feature.module').then(m => m.FeatureModule)\"\n  },\n  {\n    path : 'ticket',\n    loadChildren : () => \"import('./ticket-booking/ticket-booking.module').then(m => m.TicketBookingModule)\"\n  },\n  {\n    path : '',\n    redirectTo : '/dashboard',\n    pathMatch : 'full'\n\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DashboardModule",
+            "id": "module-DashboardModule-9a74cbd68dbd4e262117c0cee9fc9e0eef945ab0d1cf8e5be74545d2977a96da10f461ce05ee5ead57d44fc7b4496292734e0da2612b15a6b8c06bebec493a8a",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/dashboard/dashboard.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { DashboardRoutingModule } from './dashboard-routing.module';\nimport { HomePageComponent } from './home-page/home-page.component';\nimport { ElementsModule } from '../elements/elements.module';\n\n\n@NgModule({\n  declarations: [\n    HomePageComponent,\n  ],\n  imports: [\n    CommonModule,\n    DashboardRoutingModule,\n    ElementsModule\n  ]\n})\nexport class DashboardModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HomePageComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "DashboardRoutingModule"
+                        },
+                        {
+                            "name": "ElementsModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DashboardRoutingModule",
+            "id": "module-DashboardRoutingModule-9d676989d98461773bb3a959f2dade13042c140ab922c7b21dee0ac54e38b45ddb9b12bf267dab153953994393c71b057f8813a24d08245b997adc30e846ed92",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/dashboard/dashboard-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { HomePageComponent } from './home-page/home-page.component';\n\nconst routes: Routes = [\n\n  {\n    path : '',\n    component : HomePageComponent\n  }\n\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class DashboardRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ElementsModule",
+            "id": "module-ElementsModule-9e48f693da73dd1ae0149dfffa5dd738a407bf3bef256f9420be5ba3fe45e056cfbb47f8067326afc47504f7cc241c0ffdf5001c9f206fac5bc414f8a4ff2117",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/elements/elements.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { CardViewComponent } from './card-view/card-view.component';\nimport { CardCarouselComponent } from './card-carousel/card-carousel.component';\nimport { NavBarComponent } from './nav-bar/nav-bar.component';\nimport { RouterModule } from '@angular/router';\n\n\n\n@NgModule({\n  declarations: [\n    CardViewComponent,\n    CardCarouselComponent,\n    NavBarComponent\n  ],\n  imports: [\n    CommonModule,\n    RouterModule\n  ],\n  exports : [\n    CardViewComponent,\n    CardCarouselComponent,\n    NavBarComponent\n  ]\n})\nexport class ElementsModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CardCarouselComponent"
+                        },
+                        {
+                            "name": "CardViewComponent"
+                        },
+                        {
+                            "name": "NavBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CardCarouselComponent"
+                        },
+                        {
+                            "name": "CardViewComponent"
+                        },
+                        {
+                            "name": "NavBarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FeatureModule",
+            "id": "module-FeatureModule-6b2e5010ec31ebaeead585d2fce6c8d412a70dbcf4f0747d7dfafc0e2030d810f09583c2c15e4044dab59f12f5fb5607b8d5c7fe50c9fcf19a2d69b8e02ad967",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/feature/feature.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { FeatureRoutingModule } from './feature-routing.module';\nimport { MoviesComponent } from './movies/movies.component';\nimport { PlaysComponent } from './plays/plays.component';\nimport { ElementsModule } from '../elements/elements.module';\nimport { FeatureDeatilsComponent } from './feature-deatils/feature-deatils.component';\n\n\n@NgModule({\n  declarations: [\n    MoviesComponent,\n    PlaysComponent,\n    FeatureDeatilsComponent,\n  ],\n  imports: [\n    CommonModule,\n    FeatureRoutingModule,\n    ElementsModule\n  ]\n})\nexport class FeatureModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FeatureDeatilsComponent"
+                        },
+                        {
+                            "name": "MoviesComponent"
+                        },
+                        {
+                            "name": "PlaysComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ElementsModule"
+                        },
+                        {
+                            "name": "FeatureRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "FeatureRoutingModule",
+            "id": "module-FeatureRoutingModule-4670ddafa2105657adc5949c98d7f3bf80cbe9ccc6387f63bf024229ea07d3b9facd25322e96961baf771adad1e8582266a6c65726cd13ed6a8ee456afe53624",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/feature/feature-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { FeatureDeatilsComponent } from './feature-deatils/feature-deatils.component';\nimport { MoviesComponent } from './movies/movies.component';\nimport { PlaysComponent } from './plays/plays.component';\n\nconst routes: Routes = [\n\n  {\n    path : 'movies',\n    component : MoviesComponent\n  },\n  {\n    path : 'plays',\n    component : PlaysComponent\n  },\n  {\n    path : 'details/:id',\n    component : FeatureDeatilsComponent\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class FeatureRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TicketBookingModule",
+            "id": "module-TicketBookingModule-ff47c4034c6fe598c3730108c9456eb18971f9026205b081a4c37a19bc56ea077267c008b2f3baee837dfec810324b1a7a72e2fea65e1f615eb7b777c8fedc97",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/ticket-booking/ticket-booking.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { TicketBookingRoutingModule } from './ticket-booking-routing.module';\nimport { SelectSeatsComponent } from './select-seats/select-seats.component';\nimport { ElementsModule } from '../elements/elements.module';\n\nimport { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';\nimport { RouterModule } from '@angular/router';\nimport { ReactiveFormsModule } from '@angular/forms';\n\n\n@NgModule({\n  declarations: [\n    SelectSeatsComponent,\n    ConfirmBookingComponent\n  ],\n  imports: [\n    CommonModule,\n    TicketBookingRoutingModule,\n    ElementsModule,\n    RouterModule,\n    ReactiveFormsModule\n  ]\n})\nexport class TicketBookingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ConfirmBookingComponent"
+                        },
+                        {
+                            "name": "SelectSeatsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ElementsModule"
+                        },
+                        {
+                            "name": "TicketBookingRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TicketBookingRoutingModule",
+            "id": "module-TicketBookingRoutingModule-cfbb6dddd70d625a37f45f9ac8757ef0dda6c1764e714d6845f9d47ccee5540b0d500ab31caa7128873eafe3952fe55984a0712abc8dfe0c15e3deb610d54266",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/ticket-booking/ticket-booking-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { AuthGuard } from '../shared/auth-guard/auth.guard';\nimport { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';\nimport { SelectSeatsComponent } from './select-seats/select-seats.component';\n\nconst routes: Routes = [\n  {\n    path : \"seats/:id\",\n    component : SelectSeatsComponent,\n  },\n  {\n    path: \"confirm/:id\",\n    component : ConfirmBookingComponent,\n    canActivate : [AuthGuard]\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class TicketBookingRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "CardCarousel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/elements/card-carousel/card-carousel.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n  baseUrl : \"http://localhost:8080/api/v1\"\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "PrimaryCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/elements/card-view/card-view.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/elements/card-carousel/card-carousel.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CardCarouselComponent>",
+                "defaultValue": "(args: CardCarouselComponent) => ({\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/elements/card-view/card-view.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CardViewComponent>",
+                "defaultValue": "(args: CardViewComponent) => ({\n    props: args,\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/elements/card-carousel/card-carousel.component.stories.ts": [
+                {
+                    "name": "CardCarousel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/elements/card-carousel/card-carousel.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/elements/card-carousel/card-carousel.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CardCarouselComponent>",
+                    "defaultValue": "(args: CardCarouselComponent) => ({\n    props: args,\n})"
+                }
+            ],
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  baseUrl : \"http://localhost:8080/api/v1\"\n}"
+                }
+            ],
+            "src/stories/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/app/elements/card-view/card-view.component.stories.ts": [
+                {
+                    "name": "PrimaryCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/elements/card-view/card-view.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/elements/card-view/card-view.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CardViewComponent>",
+                    "defaultValue": "(args: CardViewComponent) => ({\n    props: args,\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "dashboard",
+                        "loadChildren": "./dashboard/dashboard.module#DashboardModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/dashboard/dashboard-routing.module.ts",
+                                        "module": "DashboardRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "",
+                                                "component": "HomePageComponent"
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "DashboardModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "feature",
+                        "loadChildren": "./feature/feature.module#FeatureModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/feature/feature-routing.module.ts",
+                                        "module": "FeatureRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "movies",
+                                                "component": "MoviesComponent"
+                                            },
+                                            {
+                                                "path": "plays",
+                                                "component": "PlaysComponent"
+                                            },
+                                            {
+                                                "path": "details/:id",
+                                                "component": "FeatureDeatilsComponent"
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "FeatureModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "ticket",
+                        "loadChildren": "./ticket-booking/ticket-booking.module#TicketBookingModule",
+                        "children": [
+                            {
+                                "kind": "module",
+                                "children": [
+                                    {
+                                        "name": "routes",
+                                        "filename": "src/app/ticket-booking/ticket-booking-routing.module.ts",
+                                        "module": "TicketBookingRoutingModule",
+                                        "children": [
+                                            {
+                                                "path": "seats/:id",
+                                                "component": "SelectSeatsComponent"
+                                            },
+                                            {
+                                                "path": "confirm/:id",
+                                                "component": "ConfirmBookingComponent",
+                                                "canActivate": [
+                                                    "AuthGuard"
+                                                ]
+                                            }
+                                        ],
+                                        "kind": "module"
+                                    }
+                                ],
+                                "module": "TicketBookingModule"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "",
+                        "redirectTo": "/dashboard",
+                        "pathMatch": "full"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 2,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/home-page/home-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomePageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/elements/card-carousel/card-carousel.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CardCarousel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/elements/card-carousel/card-carousel.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/elements/card-carousel/card-carousel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardCarouselComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/elements/card-view/card-view.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PrimaryCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/elements/card-view/card-view.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/elements/card-view/card-view.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardViewComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/elements/nav-bar/nav-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/feature/feature-deatils/feature-deatils.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FeatureDeatilsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/feature/movies/movies.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MoviesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/feature/plays/plays.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PlaysComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/auth-guard/auth.guard.ts",
+                "type": "guard",
+                "linktype": "guard",
+                "name": "AuthGuard",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/service/api.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ApiService",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/service/data.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "DataService",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ticket-booking/confirm-booking/confirm-booking.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ConfirmBookingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ticket-booking/select-seats/select-seats.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SelectSeatsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 100,
+                "coverageCount": "6/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

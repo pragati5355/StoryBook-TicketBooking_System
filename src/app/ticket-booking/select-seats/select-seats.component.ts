@@ -49,7 +49,7 @@ export class SelectSeatsComponent implements OnInit, OnDestroy{
       (err:any) => {
         console.error(err);
       }
-    )
+    );
     
   }
 
