@@ -1,24 +1,21 @@
 <div class="movies">
-    <app-nav-bar></app-nav-bar>
+  <app-nav-bar></app-nav-bar>
 
-    <div class="trending-movies">
-        <h5 class="trending-text ">Upcoming movies & plays</h5>
+  <div class="trending-movies">
+    <h5 class="trending-text">Upcoming movies</h5>
+  </div>
+
+  <app-card-carousel></app-card-carousel>
+
+  <div class="trending-movies">
+    <h5 class="trending-text">Trending movies</h5>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-4 col-sm-4 p-4" *ngFor="let movie of movieData">
+        <app-card-view [movieDetail]="movie"></app-card-view>
+      </div>
     </div>
-
-    <app-card-carousel></app-card-carousel>
-
-    <div class="trending-movies">
-        <h5 class="trending-text ">Trending movies</h5>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col col-md-4  col-sm-4 p-4" *ngFor="let movie of movieData" >
-                <app-card-view [movieDetail]="movie" ></app-card-view>
-               
-            </div>
-
-        </div>
-
-    </div>
+  </div>
 </div>
